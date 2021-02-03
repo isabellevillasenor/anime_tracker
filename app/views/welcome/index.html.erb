@@ -1,2 +1,6 @@
-<%= link_to 'Register as a User', new_user_path %>
-<%= link_to 'I Have an Account', login_path %>
+<% if current_user %>
+  <%= link_to 'Log Out', logout_path %>
+<% else %>
+  <%= link_to 'Register as a User', new_user_path %><br>
+  <%= link_to 'I Have an Account', login_path %>
+<% end %>

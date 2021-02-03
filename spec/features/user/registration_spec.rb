@@ -18,6 +18,9 @@ describe 'User Log In' do
 
       expect(current_path).to eq(root_path)
       expect(page).to have_content("Welcome, #{user.email}!")
+      expect(page).to have_link('Log Out')
+      expect(page).to_not have_link('Register as a User')
+      expect(page).to_not have_link('I Have an Account')
     end
   end
 
